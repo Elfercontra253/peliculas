@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sala de Películas</title>
+  <style>
+    * { box-sizing: border-box; }
 
+    body {
+      margin: 0;
+      background: #0b0b12;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 22px;
+      background: #151522;
+      border-bottom: 1px solid #29293a;
+      text-align: center;
+    }
+
+    header h1 { margin: 0; color: #a78bfa; }
+    header p { color: #bbb; }
+
+    main {
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: #171722;
+      border: 1px solid #303044;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .player {
+      background: #050505;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 8px;
+      color: #ccc;
+      padding: 20px;
+    }
+
+    .chat {
+      height: 280px;
+      overflow-y: auto;
+      background: #0d0d15;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 7px;
+      border: 1px solid #41415a;
+      font-size: 15px;
+    }
+
+    input {
+      background: #0b0b12;
+      color: white;
+    }
+
+    button {
+      background: #7c3aed;
+      color: white;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+    }
+
+    .note { color: #aaa; font-size: 13px; line-height: 1.5; }
+
+    @media (max-width: 700px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Mi Sala de Películas</h1>
+    <p>Mirá, disfrutá y compartí el momento con la comunidad.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>🍿 Ahora en la sala</h2>
+      <div class="player">
+        <div>
+          <h3>Tu película va aquí</h3>
+          <p>Pronto podrás insertar un reproductor autorizado.</p>
+        </div>
+      </div>
+      <p class="note">
+        Este espacio está preparado para contenido propio,
+        de dominio público o con permiso de retransmisión.
+      </p>
+      <h3>🔴 Mi directo</h3>
+      <p><a href="https://www.twitch.tv/" target="_blank"
+        style="color:#c4b5fd">Entrar a Twitch</a></p>
+    </section>
+
+    <section class="panel">
+      <h2>💬 Chat de la sala</h2>
+      <div class="chat" id="chat">
+        <p class="note">Bienvenido a la sala. El chat real se conectará después.</p>
+      </div>
+      <form id="chatForm">
+        <input id="message" placeholder="El chat aún no está conectado"
+          disabled>
+        <button type="button" disabled>Chat próximamente</button>
+      </form>
+      <p class="note">
+        Esta es una vista inicial. Más adelante conectaremos
+        un servicio de chat en tiempo real.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
